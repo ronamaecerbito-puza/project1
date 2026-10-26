@@ -85,6 +85,7 @@ header p {
   border-bottom: 1px solid #f1f5f9;
   font-size: 0.95rem;
   color: #334155;
+  cursor: pointer;
 }
 
 .task-item.completed span {
