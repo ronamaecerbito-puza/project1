@@ -1,0 +1,284 @@
+/* =====================================
+   GLOBAL STYLES
+===================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #333;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Containers */
+.container {
+  padding: 1rem;
+}
+
+.page, main, .content-wrapper {
+  flex: 1;
+  min-height: 100vh;
+}
+
+/* =====================================
+   NAVIGATION BAR
+===================================== */
+nav {
+  background: linear-gradient(135deg, #eeddb7, #ecc978);
+  color: white;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav img {
+  border-radius: 8px;
+}
+
+nav strong {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 35%;
+}
+
+/* Navigation Buttons */
+nav button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav .btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  backdrop-filter: blur(6px);
+}
+
+nav .btn:hover {
+  color: black;
+  background-color: white;
+  transform: translateY(-2px);
+}
+
+nav .btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+nav .btn-outline:hover {
+  background: white;
+  color: #b22222;
+  transform: translateY(-2px);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #f9f9f9;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.dropdown-content button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #333;
+  text-align: left;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-content button:hover {
+  background: #e3a023;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* =====================================
+   PROFILE DROPDOWN
+===================================== */
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-btn {
+  background: linear-gradient(135deg, #ead02a, #0e0d0d);
+  color: white;
+  font-size: 20px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.profile-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #0e0d0d, #ead02a);
+}
+
+.profile-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: white;
+  border-radius: 10px;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  width: 170px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.25s ease;
+  z-index: 999;
+}
+
+.profile-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-item {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.profile-item:hover {
+  background: linear-gradient(135deg, #004aad1a, #8000001a);
+  color: #800000;
+}
+
+/* =====================================
+   CONTENT & CARDS
+===================================== */
+.bgimg {
+  background: url("img/gb.jpg") center/cover no-repeat;
+  min-height: 100vh;
+  position: relative;
+  color: #e5dcc159;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border: 1.5px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Buttons */
+.btn-main {
+  background: linear-gradient(135deg, #4F46E5, #6366F1);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-main:hover {
+  background: linear-gradient(135deg, #4338CA, #4F46E5);
+  transform: translateY(-1px);
+}
+
+.btn-main:active {
+  transform: translateY(1px);
+  opacity: 0.9;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #f3f4f6;
+}
+
+.menu {
+  display: none;
+  max-width: 900px;
+  min-height: 100vh;
+  margin:
